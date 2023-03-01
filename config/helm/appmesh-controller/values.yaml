@@ -38,7 +38,7 @@ sidecar:
       memory: ""
   lifecycleHooks:
     # sidecar.lifecycleHooks: Envoy PreStop Hook Delay
-    preStopDelay: 20
+    preStopCommand: sleep 20
     postStartInterval: 5
     postStartTimeout: 180
   probes:

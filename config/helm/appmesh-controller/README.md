@@ -401,7 +401,7 @@ Parameter | Description | Default
 `sidecar.envoyAdminAccessLogFile` | Envoy Admin Access Log File | `/tmp/envoy_admin_access.log`
 `sidecar.resources.requests` | Envoy container resource requests | `requests: cpu 10m memory 32Mi`
 `sidecar.resources.limits` | Envoy container resource limits | `limits: cpu "" memory ""`
-`sidecar.lifecycleHooks.preStopDelay` | Envoy container PreStop Hook Delay Value | `20s`
+`sidecar.lifecycleHooks.preStopCommand` | Envoy container PreStop Hook command | `sleep 20`
 `sidecar.lifecycleHooks.postStartInterval` | Envoy container PostStart Hook Interval Value | `5s`
 `sidecar.lifecycleHooks.postStartTimeout` | Envoy container PostStart Hook Timeout Value | `180s`
 `sidecar.probes.readinessProbeInitialDelay` | Envoy container Readiness Probe Initial Delay | `1s`

@@ -21,7 +21,7 @@ const (
 	flagSidecarMemoryLimits        = "sidecar-memory-limits"
 	flagPreview                    = "preview"
 	flagLogLevel                   = "sidecar-log-level"
-	flagPreStopDelay               = "prestop-delay"
+	flagPreStopCommand             = "prestop-command"
 	flagPostStartTimeout           = "poststart-timeout"
 	flagPostStartInterval          = "poststart-interval"
 	flagReadinessProbeInitialDelay = "readiness-probe-initial-delay"
@@ -83,7 +83,7 @@ type Config struct {
 	SidecarMemoryLimits        string
 	Preview                    bool
 	LogLevel                   string
-	PreStopDelay               string
+	PreStopCommand             string
 	PostStartTimeout           int32
 	PostStartInterval          int32
 	ReadinessProbeInitialDelay int32
@@ -164,7 +164,7 @@ func (cfg *Config) BindFlags(fs *pflag.FlagSet) {
 		"AWS App Mesh envoy admin access port")
 	fs.StringVar(&cfg.EnvoyAdminAccessLogFile, flagEnvoyAdminAccessLogFile, "/tmp/envoy_admin_access.log",
 		"AWS App Mesh envoy access log path")
-	fs.StringVar(&cfg.PreStopDelay, flagPreStopDelay, "20",
+	fs.StringVar(&cfg.PreStopCommand, flagPreStopCommand, "sleep 20",
 		"AWS App Mesh envoy preStop hook sleep duration")
 	fs.Int32Var(&cfg.PostStartTimeout, flagPostStartTimeout, 180,
 		"AWS App Mesh envoy postStart hook timeout duration")

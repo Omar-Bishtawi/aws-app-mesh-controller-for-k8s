@@ -26,7 +26,7 @@ type EnvoyTemplateVariables struct {
 	LogLevel                 string
 	AdminAccessPort          int32
 	AdminAccessLogFile       string
-	PreStopDelay             string
+	PreStopCommand           string
 	PostStartTimeout         int32
 	PostStartInterval        int32
 	SidecarImageRepository   string
@@ -207,7 +207,7 @@ func buildEnvoySidecar(vars EnvoyTemplateVariables, env map[string]string) (core
 			PostStart: nil,
 			PreStop: &corev1.LifecycleHandler{
 				Exec: &corev1.ExecAction{Command: []string{
-					"sh", "-c", fmt.Sprintf("sleep %s", vars.PreStopDelay),
+					"sh", "-c", vars.PreStopCommand,
 				}},
 			},
 		},

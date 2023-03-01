@@ -1,5 +1,5 @@
 # Image URL to use all building/pushing image targets
-IMAGE_NAME=amazon/appmesh-controller
+IMAGE_NAME=harri-appmesh-controller
 REPO=$(AWS_ACCOUNT).dkr.ecr.$(AWS_REGION).amazonaws.com/$(IMAGE_NAME)
 REPO_FULL_NAME=aws/aws-app-mesh-controller-for-k8s
 BINARY_NAME ?= "appmesh-controller"

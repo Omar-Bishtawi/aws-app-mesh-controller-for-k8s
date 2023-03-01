@@ -122,7 +122,7 @@ func (m *SidecarInjector) injectAppMeshPatches(ms *appmesh.Mesh, vn *appmesh.Vir
 				logLevel:                   m.config.LogLevel,
 				adminAccessPort:            m.config.EnvoyAdminAcessPort,
 				adminAccessLogFile:         m.config.EnvoyAdminAccessLogFile,
-				preStopDelay:               m.config.PreStopDelay,
+				preStopCommand:             m.config.PreStopCommand,
 				readinessProbeInitialDelay: m.config.ReadinessProbeInitialDelay,
 				readinessProbePeriod:       m.config.ReadinessProbePeriod,
 				sidecarImageRepository:     m.config.SidecarImageRepository,

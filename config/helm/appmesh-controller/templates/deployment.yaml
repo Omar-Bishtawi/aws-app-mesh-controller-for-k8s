@@ -64,7 +64,7 @@ spec:
         - --sidecar-memory-limits={{ .Values.sidecar.resources.limits.memory }}
         - --init-image={{ .Values.init.image.repository }}:{{ .Values.init.image.tag }}
         - --enable-stats-tags={{ .Values.stats.tagsEnabled }}
-        - --prestop-delay={{ .Values.sidecar.lifecycleHooks.preStopDelay }}
+        - --prestop-command="{{ .Values.sidecar.lifecycleHooks.preStopDelay }}"
         - --poststart-timeout={{ .Values.sidecar.lifecycleHooks.postStartTimeout }}
         - --poststart-interval={{ .Values.sidecar.lifecycleHooks.postStartInterval }}
         - --readiness-probe-initial-delay={{ .Values.sidecar.probes.readinessProbeInitialDelay }}
